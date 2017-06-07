@@ -12,7 +12,13 @@
                         {{ $article->user->name }} -
                         {{ $article->created_at->diffForHumans() }}
 
-                        | <a href="{{ route('articles.edit', $article) }}">Edit</a>
+                        | <a href="{{ route('articles.edit', $article) }}">Edit</a> -
+                        <form class="" action="{{ route('articles.destroy', $article) }}" method="post">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+
+                            <input type="submit" value="Delete" class="btn btn-danger">
+                        </form>
                     </h4>
                 </div>
                 <div class="panel-body">

@@ -24,3 +24,4 @@ Route::get('/articles/add', 'ArticleController@create')->name('articles.add');
 Route::post('/articles/add', 'ArticleController@store')->name('articles.store');
 Route::get('/articles/{article}/edit', 'ArticleController@edit')->name('articles.edit');
 Route::patch('/articles/{article}/edit', 'ArticleController@update')->name('articles.update');
+Route::delete('/articles/{article}/delete', 'ArticleController@destroy')->name('articles.destroy');
